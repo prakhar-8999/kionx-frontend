@@ -3,13 +3,22 @@ import {ChevronUp} from "lucide-react";
 import {useEffect, useState} from "react";
 import sidebarFrame from "../assets/sidebarFrame.svg";
 
+interface coinInterface {
+  item: {
+    id: number;
+    small: string;
+    symbol: string;
+    name: string;
+    data: {total_volume_btc: number};
+  };
+}
+
 const SideBar = ({customClass}: {customClass?: string}) => {
-  const [coins, setCoins] = useState<any>([]);
+  const [coins, setCoins] = useState<coinInterface[]>([]);
   useEffect(() => {
     axios
       .get("https://api.coingecko.com/api/v3/search/trending")
       .then((res) => {
-        console.log(res.data.coins.splice(0, 3));
         setCoins(res.data.coins.splice(0, 3));
       })
       .catch((err) => console.log(err));
@@ -38,7 +47,6 @@ const SideBar = ({customClass}: {customClass?: string}) => {
         </button>
       </div>
 
-      {/* Trending Coins */}
       <div className={`bg-white rounded-lg p-6 shadow-md ${customClass}`}>
         <h2 className="text-lg font-bold mb-4">Trending Coins (24h)</h2>
         <div className="space-y-4">

@@ -9,13 +9,11 @@ const Tokenomics = () => {
             <h3 className="text-xl font-semibold mb-6">Initial Distribution</h3>
 
             <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
-              {/* Donut Chart */}
               <div className="relative w-64 h-64">
                 <svg
                   viewBox="0 0 100 100"
                   className="transform -rotate-90 w-full h-full"
                 >
-                  {/* Orange Segment (60%) */}
                   <circle
                     cx="50"
                     cy="50"
@@ -23,10 +21,9 @@ const Tokenomics = () => {
                     fill="none"
                     stroke="#FFA500"
                     strokeWidth="20"
-                    strokeDasharray="150.72 251.2" /* 60% of circumference is filled */
+                    strokeDasharray="150.72 251.2"
                     strokeDashoffset="0"
                   />
-                  {/* Blue Segment (40%) */}
                   <circle
                     cx="50"
                     cy="50"
@@ -34,13 +31,12 @@ const Tokenomics = () => {
                     fill="none"
                     stroke="#0082FF"
                     strokeWidth="20"
-                    strokeDasharray="100.48 251.2" /* 40% of circumference is filled */
-                    strokeDashoffset="-150.72" /* Offset to start after the orange segment */
+                    strokeDasharray="100.48 251.2"
+                    strokeDashoffset="-150.72"
                   />
                 </svg>
               </div>
 
-              {/* Legend */}
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-[#0082FF]"></div>

@@ -37,7 +37,6 @@ const Navbar = () => {
           }`}
         >
           <div className="relative bg-white p-6 rounded-lg shadow-lg w-80">
-            {/* Close Button */}
             <button
               onClick={toggleNavbar}
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-xl font-bold focus:outline-none"
@@ -45,7 +44,6 @@ const Navbar = () => {
               &times;
             </button>
 
-            {/* Navbar Links */}
             <nav className="space-y-4">
               <a href="#" className="text-sm font-medium">
                 Crypto Taxes

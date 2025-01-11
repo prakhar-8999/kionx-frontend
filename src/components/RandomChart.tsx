@@ -18,19 +18,17 @@ export default function RandomChart({
   className = "",
 }: RandomChartProps) {
   const path = useMemo(() => {
-    // Generate random points
     const generatePoints = () => {
       const randomPoints: number[][] = [];
       for (let i = 0; i < points; i++) {
         randomPoints.push([
           (i / (points - 1)) * width,
-          (0.3 + Math.random() * 0.4) * height, // Keep within 30-70% of height for better visualization
+          (0.3 + Math.random() * 0.4) * height,
         ]);
       }
       return randomPoints;
     };
 
-    // Create smooth curve through points
     const smoothLine = (points: number[][]) => {
       if (points.length < 2) return "";
 

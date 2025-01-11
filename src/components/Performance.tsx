@@ -2,7 +2,6 @@ const Performance = () => {
   return (
     <>
       <div className="bg-white rounded-lg p-6">
-        {/* Performance Section */}
         <h2 className="text-2xl font-semibold mb-6">Performance</h2>
 
         <div className="mb-8">
@@ -27,7 +26,6 @@ const Performance = () => {
           </div>
         </div>
 
-        {/* 52W Range */}
         <div className="mb-8">
           <div className="flex justify-between text-md mb-1">
             <div>
@@ -44,7 +42,6 @@ const Performance = () => {
           </div>
         </div>
 
-        {/* Fundamentals Section */}
         <div className="mt-12">
           <div className="flex items-center gap-2 mb-6">
             <h2 className="text-2xl font-semibold">Fundamentals</h2>
@@ -54,7 +51,6 @@ const Performance = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
-            {/* Left Column */}
             <div className="space-y-4">
               <div className="flex justify-between py-3 border-b">
                 <span className="text-gray-500">Bitcoin Price</span>
@@ -78,7 +74,6 @@ const Performance = () => {
               </div>
             </div>
 
-            {/* Right Column */}
             <div className="space-y-4 items-center">
               <div className="flex justify-between py-3 border-b">
                 <span className="text-gray-500">Market Cap</span>

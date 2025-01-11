@@ -56,7 +56,6 @@ const AboutBitcoin = () => {
             <h3 className="font-semibold mb-4">Already Holding Bitcoin?</h3>
 
             <div className="grid md:grid-cols-2 gap-4">
-              {/* Calculate Profits Card */}
               <div className="bg-gradient-to-r from-[#79F1A4] to-[#0E5CAD] p-4 rounded-lg text-white">
                 <div className="flex items-center gap-x-12">
                   <div className="mt-2">
@@ -76,25 +75,8 @@ const AboutBitcoin = () => {
                     </button>
                   </div>
                 </div>
-                {/* <div className="flex justify-between items-start mb-20">
-                  <div>
-                    <h4 className="font-medium mb-1">Calculate your Profits</h4>
-                  </div>
-                  <img
-                    src={aboutImage1}
-                    alt="Profits icon"
-                    width={40}
-                    height={40}
-                    className="rounded"
-                  />
-                </div>
-                <button className="flex items-center gap-2 bg-white text-black px-3 py-1.5 rounded text-sm">
-                  Check Now
-                  <ArrowRight className="w-4 h-4" />
-                </button> */}
               </div>
 
-              {/* Calculate Tax Card */}
               <div className="bg-gradient-to-r from-[#FF9865] to-[#EF3031] p-4 rounded-lg text-white">
                 <div className="flex items-center gap-x-12">
                   <div className="mt-2">
