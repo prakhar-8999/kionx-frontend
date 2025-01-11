@@ -1,6 +1,8 @@
 import {TrendingUp} from "lucide-react";
 import logo from "./assets/logo.svg";
+import AboutBitcoin from "./components/AboutBitcoin";
 import Performance from "./components/Performance";
+import Sentiments from "./components/Sentiments";
 import SideBar from "./components/SideBar";
 import TradingView from "./components/TradingView";
 const App = () => {
@@ -115,6 +117,8 @@ const App = () => {
                   </div>
                 </div> */}
                 <Performance />
+                <Sentiments />
+                <AboutBitcoin />
               </div>
 
               {/* Sidebar */}

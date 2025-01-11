@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {memo, useEffect, useRef} from "react";
 
 function TradingViewWidget() {

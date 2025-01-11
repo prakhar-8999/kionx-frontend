@@ -79,7 +79,7 @@ const Performance = () => {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-4">
+            <div className="space-y-4 items-center">
               <div className="flex justify-between py-3 border-b">
                 <span className="text-gray-500">Market Cap</span>
                 <span className="font-medium">$323,507,290,047</span>
@@ -92,8 +92,8 @@ const Performance = () => {
                 <span className="text-gray-500">Volume / Market Cap</span>
                 <span className="font-medium">0.0718</span>
               </div>
-              <div className="flex justify-between py-3 border-b">
-                <span className="text-gray-500">All-Time High</span>
+              <div className="flex justify-between items-center pb-1 border-b">
+                <div className="text-gray-500">All-Time High</div>
                 <div className="text-right">
                   <div className="font-medium">
                     $69,044.77 <span className="text-red-500">-75.6%</span>
@@ -103,8 +103,8 @@ const Performance = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-between py-3 border-b">
-                <span className="text-gray-500">All-Time Low</span>
+              <div className="flex justify-between items-center pb-1 border-b">
+                <div className="text-gray-500">All-Time Low</div>
                 <div className="text-right">
                   <div className="font-medium">
                     $67.81 <span className="text-green-500">24729.1%</span>
