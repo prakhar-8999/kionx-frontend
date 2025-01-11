@@ -1,10 +1,24 @@
-import {TrendingUp} from "lucide-react";
+import axios from "axios";
+import {ChevronUp} from "lucide-react";
+import {useEffect, useState} from "react";
 import sidebarFrame from "../assets/sidebarFrame.svg";
 
-const SideBar = () => {
+const SideBar = ({customClass}: {customClass?: string}) => {
+  const [coins, setCoins] = useState<any>([]);
+  useEffect(() => {
+    axios
+      .get("https://api.coingecko.com/api/v3/search/trending")
+      .then((res) => {
+        console.log(res.data.coins.splice(0, 3));
+        setCoins(res.data.coins.splice(0, 3));
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
-      <div className="bg-sidebarBackground text-white rounded-lg p-6 text-center mb-6 shadow-md">
+      <div
+        className={`bg-sidebarBackground text-white rounded-lg p-6 text-center mb-6 shadow-md ${customClass}`}
+      >
         <h2 className="text-3xl font-bold mb-4">
           Get Started with KoinX <br /> for FREE
         </h2>
@@ -25,48 +39,30 @@ const SideBar = () => {
       </div>
 
       {/* Trending Coins */}
-      <div className="bg-white rounded-lg p-6 shadow-md">
+      <div className={`bg-white rounded-lg p-6 shadow-md ${customClass}`}>
         <h2 className="text-lg font-bold mb-4">Trending Coins (24h)</h2>
         <div className="space-y-4">
-          {[
-            {
-              name: "Ethereum",
-              symbol: "ETH",
-              change: "8.21",
-              image:
-                "https://www.iconarchive.com/download/i109534/cjdowner/cryptocurrency-flat/Ethereum-ETH.1024.png",
-            },
-            {
-              name: "Bitcoin",
-              symbol: "BTC",
-              change: "5.26",
-              image: "https://cryptologos.cc/logos/bitcoin-btc-logo.png",
-            },
-            {
-              name: "Polygon",
-              symbol: "MATIC",
-              change: "4.32",
-              image: "https://cdn-icons-png.freepik.com/512/12114/12114233.png",
-            },
-          ].map((coin) => (
+          {coins.map((coin: any) => (
             <div
-              key={coin.symbol}
+              key={coin.item.id}
               className="flex items-center justify-between"
             >
               <div className="flex items-center gap-2">
                 <img
-                  src={coin.image}
-                  alt={coin.name}
+                  src={coin.item.small}
+                  alt={coin.item.symbol}
                   width={24}
                   height={24}
                   className="rounded-full"
                 />
-                <span>{coin.name}</span>
-                <span className="text-gray-600">({coin.symbol})</span>
+                <span>{coin.item.name}</span>
+                <span className="text-gray-600">({coin.item.symbol})</span>
               </div>
               <div className="flex items-center gap-1 text-green-500 bg-green-50 px-2 py-1 rounded text-sm">
-                <TrendingUp className="w-3 h-3" />
-                <span>{coin.change}%</span>
+                <ChevronUp className="w-3 h-3" />
+                <span>
+                  {Number(coin.item.data.total_volume_btc).toFixed(2)}%
+                </span>
               </div>
             </div>
           ))}
